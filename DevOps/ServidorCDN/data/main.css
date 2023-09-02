@@ -1,0 +1,154 @@
+.font-family-base {
+  letter-spacing: 1px;
+  font-weight: bolder;
+  color: #4D4D4D;
+}
+
+.textColorPrimary {
+  color: #52B708;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.pi-chevron-left:before {
+  color: #fcfcfc;
+  padding: 10px;
+  margin: 20px;
+  font-size: x-large;
+  border-radius: 100%;
+  border: 1px solid;
+  border-color: #555555;
+  background-color: #555555;
+}
+
+.pi-chevron-right:before {
+  color: #fcfcfc;
+  padding: 10px;
+  margin: 20px;
+  font-size: x-large;
+  border-radius: 100%;
+  border: 1px solid;
+  border-color: #555555;
+  background-color: #555555;
+}
+
+.p-galleria-item-nav {
+  height: 3rem;
+}
+
+.pi {
+  line-height: inherit !important;
+}
+
+main {
+  background-color: #fcfcfc;
+  height: auto;
+}
+
+footer {
+  background-color: #4D4D4D;
+  height: 8rem;
+  border: 1px solid;
+}
+
+header {
+  background-color: #fcfcfc;
+  height: auto;
+  border: 1px solid;
+  border-color: #fcfcfc;
+  box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+  background-color: #52B708 !important;
+  color: #fcfcfc !important;
+  letter-spacing: 1px;
+  font-weight: bold !important;
+}
+
+.row {
+  --bs-gutter-x:0 !important;
+}
+
+.icon {
+  color: #52B708;
+  background-color: transparent;
+  border: none;
+  font-weight: bolder;
+  font-size: 1.6rem;
+}
+
+hr {
+  background-color: #52B708;
+  border: 1px solid;
+  color: #52B708;
+  height: 0.1rem;
+}
+
+.cardProduct {
+  width: 17rem;
+  margin: 10px;
+  border: 1px solid;
+  border-color: #fcfcfc;
+  box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.25);
+}
+
+.cardPresentation {
+  font-size: xx-small !important;
+  padding: 0.3rem !important;
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
+  margin: 0.3rem;
+  background-color: #fcfcfc !important;
+  color: #222222 !important;
+}
+
+.cardItemSelected {
+  box-shadow: 0px 0px 3px 0px #52B708;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 5rem;
+  margin: 20px;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  margin-top: -10px;
+}
+
+.category {
+  width: 4rem;
+  height: 4rem;
+}
+
+.information {
+  width: 30rem;
+}
+
+.presentation {
+  width: 100%;
+  height: auto;
+  margin-top: -10px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.stop {
+  cursor: no-drop;
+}
+
+/*# sourceMappingURL=main.css.map */

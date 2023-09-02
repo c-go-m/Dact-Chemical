@@ -1,0 +1,13 @@
+version: "3.9"
+    
+services:
+  cdn:
+    image: nginx
+    volumes:
+      - ./data:/usr/share/nginx/html
+    ports:
+      - "9010:80"      
+    restart: always
+
+    
+        

@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    container_name: mysql_container
+    image: mysql
+    restart: always
+    environment:      
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: DactChemical
+    ports:
+      - "9003:3306"   
+  admin:
+    container_name: admin_container
+    image: adminer
+    restart: always
+    ports:
+      - "9004:8080"      
