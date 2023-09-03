@@ -1,0 +1,36 @@
+<form [formGroup]="formProduct">
+  <div class="modal-header">
+    <h4 class="modal-title" *ngIf="!product?.Id">Crear producto</h4>
+    <h4 class="modal-title" *ngIf="product?.Id">Actualizar producto</h4>
+    <button type="button" class="btn-close rounded-pill" aria-label="Close" (click)="close()"></button>
+  </div>
+
+  <div class="modal-body">
+
+    <div class="m-3 row">
+      <label for="name" class="col-2 col-form-label m-2">Nombre</label>
+      <div class="col-9 m-2">
+        <input type="text" class="form-control" id="name" formControlName="name">
+      </div>
+    </div>
+    <div class="m-3 row">
+      <label for="category" class="col-2 col-form-label m-2">Categoria</label>
+      <div class="col-9 m-2">
+        <select  class="form-select" id="category" formControlName="categoryId">
+          <option *ngFor="let category of categories" [ngValue]="category.Id">
+            {{category.name}}
+          </option>  
+        </select>
+      </div>
+    </div>
+    <app-attached (submitAttached)="submitAttached($event)" [attached]="product ? product.attached : attached">
+    </app-attached>
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" class="btn rounded-pill" (click)="close()">Cancelar</button>
+    <button type="submit" class="btn rounded-pill" (click)="create()" *ngIf="!product?.Id" [disabled]="!formProduct.valid">Crear</button>
+    <button type="submit" class="btn rounded-pill" (click)="update()" *ngIf="product?.Id" [disabled]="!formProduct.valid">Update</button>
+  </div>
+</form>

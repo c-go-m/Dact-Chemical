@@ -1,0 +1,2 @@
+sass --watch Front/scss:DevOps/Proyect/assets
+sass --watch Front/scss:DevOps/ServidorCDN/data

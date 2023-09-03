@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-12">        
+        <p-galleria [value]="banners" [changeItemOnIndicatorHover]="true" [showIndicators]="true" 
+            [showIndicatorsOnItem]="true" [showThumbnails]="false" [showItemNavigators]="true"
+            [(activeIndex)]="activeIndex" [transitionInterval]="5000" [autoPlay]="true" [circular]="true">
+
+            <ng-template pTemplate="item" let-item>                
+                <img [src]="urlBase+item.attached.url" [alt]="item.name" class="banner"/>                    
+            </ng-template>          
+
+            <ng-template pTemplate="indicator" let-index let-item>
+                <div class="grid grid-nogutter justify-content-center">                                                                           
+                    <h1 class="fa-solid fa-minus m-2" [ngClass]="{'text-light' : activeIndex == index, 'text-secondary': activeIndex != index}"></h1>                                    
+                </div>
+            </ng-template>
+
+        </p-galleria>
+    </div>      
+</div>

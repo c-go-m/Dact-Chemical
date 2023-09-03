@@ -1,0 +1,48 @@
+<form [formGroup]="formInformation">
+  <div class="modal-header">
+    <h4 class="modal-title" *ngIf="!information?.Id">Crear information</h4>
+    <h4 class="modal-title" *ngIf="information?.Id">Actualizar information</h4>
+    <button type="button" class="btn-close rounded-pill" aria-label="Close" (click)="close()"></button>
+  </div>
+
+  <div class="modal-body">
+
+    <div class="m-3 row">
+      <label for="name" class="col-2 col-form-label m-2">Nombre</label>
+      <div class="col-9 m-2">
+        <input type="text" class="form-control" id="name" formControlName="name">
+      </div>
+    </div>
+    <div class="m-3 row">
+      <label for="value" class="col-2 col-form-label m-2">Valor</label>
+      <div class="col-9 m-2">
+        <textarea class="form-control" id="value" formControlName="value"></textarea>        
+      </div>
+    </div>
+    <div class="m-3 row">
+      <label for="posicion" class="col-2 col-form-label m-2">Posición</label>
+      <div class="col-9 m-2">
+        <input type="number" class="form-control" id="posicion" formControlName="position">
+      </div>
+    </div>
+    <div class="m-3 row">
+      <label for="menu" class="col-2 col-form-label m-2">Menu</label>
+      <div class="col-9 m-2">
+        <select  class="form-select" id="menu" formControlName="menuId">
+          <option *ngFor="let menu of menus" [ngValue]="menu.Id">
+            {{menu.name}}
+          </option>  
+        </select>
+      </div>
+    </div>
+    <app-attached (submitAttached)="submitAttached($event)" [attached]="information? information.attached : {}">
+    </app-attached>
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" class="btn rounded-pill" (click)="close()">Cancelar</button>
+    <button type="submit" class="btn rounded-pill" (click)="create()" *ngIf="!information?.Id" [disabled]="!formInformation.valid">Crear</button>
+    <button type="submit" class="btn rounded-pill" (click)="update()" *ngIf="information?.Id" [disabled]="!formInformation.valid">Actualizar</button>
+  </div>
+</form>

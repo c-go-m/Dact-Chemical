@@ -1,0 +1,1 @@
+export  { AttachedComponent } from './attached/attached.component';

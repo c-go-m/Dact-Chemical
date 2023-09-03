@@ -1,0 +1,33 @@
+<div class="row m-5 ">
+  <div class="col-10">
+    <h2>Listado de categorias</h2>
+  </div>
+  <div class="col-2 d-flex justify-content-end">
+    <button class="btn button border rounded-pill ps-5 pe-5" (click)="openModal()">Crear</button>
+  </div>
+</div>
+<div class="row m-5">   
+  <table class="table table-striped">
+    <thead>
+      <tr class="bg-secondary">
+        <th scope="col">Posicion</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">NombreArchivo</th>
+        <th scope="col">Url</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <th scope="row">{{category.position}}</th>
+        <td>{{category.name}}</td>
+        <td>{{category.attached?.name}}.{{category.attached?.extension}}</td>
+        <td>{{category.attached?.url}}</td>
+        <td>
+          <i class="fa-solid fa-pencil ps-2 pe-2" (click)="openModal(category)"></i>
+          <i class="fa-solid fa-trash-can ps-2 pe-2"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

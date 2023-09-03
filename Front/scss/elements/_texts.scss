@@ -1,0 +1,27 @@
+@use '../utils/colors' as c;
+@use '../utils/size' as s;
+
+//Font
+$font-family: Verdana, Arial, Tahoma, sans-serif;
+$font-bold-xx: bolder;
+$font-bold-x: bold;
+
+
+
+.font-family-base {
+    //font-family: $font-family;
+    letter-spacing: 1px;
+    font-weight: $font-bold-xx;
+    color: c.$color-secundary;
+}
+
+.textColorPrimary {
+    color: c.$color-primary;
+    font-weight: $font-bold-xx;
+    letter-spacing: 1px;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+

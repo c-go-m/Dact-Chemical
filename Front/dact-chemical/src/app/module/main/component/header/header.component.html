@@ -1,0 +1,41 @@
+<nav class="row">
+    <!--Logo-->
+    <div class="col-2 center">
+        <img src="{{urlLogo}}" class="logo">
+    </div>
+    
+    <div class="col-10">
+        <!--Primera Fila-->    
+        <div class="row justify-content-end">
+            <!--Barra de busqueda-->
+            <div class="col-6 mt-3">
+                <div class="input-group">
+                    <input class="form-control border rounded-pill" type="text" placeholder="Buscar productos">
+                    <span class="input-group-append" style="z-index: 1;">
+                        <button class="icon" type="button" style="margin-left: -50px;">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-1 mt-3 ">
+
+            </div>
+            <!--Boton de Compra y Carrito de compra-->
+            <div class="col-4 mt-3 pe-5 mb-3 d-flex justify-content-end">
+                <button class="btn button border rounded-pill me-5 ps-5 pe-5" *ngIf="!userAdmin" (click)="loginUser()">Ingresar</button>
+                <button class="btn button border rounded-pill me-5 ps-5 pe-5" *ngIf="userAdmin" (click)="logoutUser()">Salir</button>
+                <button class="icon" type="button" >                    
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+        </div>
+        <!--Segunda Fila-->
+        <div class="row justify-content-end">
+            <div class="col-auto pe-5">
+                <label class="ps-5" routerLink="{{menu.rute}}" *ngFor="let menu of menusUser">{{menu.name}}</label>                
+            </div>
+        </div>
+    </div>
+
+</nav>

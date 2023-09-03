@@ -1,0 +1,4 @@
+{
+    "urlBase": "http://localhost:4000/v1/api/",
+    "urlStorage":"https://dactchemicalsa.blob.core.windows.net/dact-chemical/"    
+}

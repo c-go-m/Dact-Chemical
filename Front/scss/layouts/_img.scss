@@ -1,0 +1,27 @@
+@use '../utils/margin' as m;
+
+.logo {
+    height: 5rem;
+    margin: m.$margin-general;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    margin-top: - m.$margin-min;
+}
+
+.category {
+    width: 4rem;
+    height: 4rem;
+}
+
+.information {
+    width: 30rem;    
+}
+
+.presentation {
+    width: 100%;
+    height: auto;
+    margin-top: - m.$margin-min;
+}

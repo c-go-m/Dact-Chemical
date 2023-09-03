@@ -1,0 +1,61 @@
+<div class="d-flex justify-content-center m-4">
+    <div *ngFor="let product of products" class="card cardProduct">
+        <div class="card-body text-center" *ngIf="product.presentation">
+            <h5 class="card-title">{{product.name}}</h5>
+            
+            <!--Listado de imagenes del producto-->
+            <div class="row">
+                <div class="col-12">
+                    <p-galleria [value]="product.presentation" [showThumbnails]="false" [showItemNavigators]="false"
+                        [(activeIndex)]="activeIndex" [circular]="true">
+
+                        <ng-template pTemplate="item" let-item>
+                            <img [src]="urlBase + item.attached.url" [alt]="item.name" class="presentation" />
+                        </ng-template>
+
+                    </p-galleria>
+                </div>
+            </div>
+            
+            <!--Listado de presentaciones-->
+            <div class="row">
+                <div class="col-12">
+                    <small *ngFor="let presentation of product.presentation; let i = index"
+                        class="btn button border rounded-pill cardPresentation"
+                        (click)="changePresentation(i)"
+                        [ngClass]="{'cardItemSelected': validateSelectedPresentation(presentation.position)}">
+                        {{presentation.name}}
+                    </small>
+                </div>
+            </div>
+
+            <!--Precio y presentacion-->
+            <div class="row">
+                <div class="col-12">
+                    <div *ngFor="let presentation of product.presentation">
+                        <label class="m-2" *ngIf="validateSelectedPresentation(presentation.position)">
+                            $ {{presentation.cost}} X {{presentation.name}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!--Carrito de compra-->
+            <div class="row">
+                <div class="col-12">
+                    <div *ngFor="let presentation of product.presentation">
+                        <button class="icon" type="button"  *ngIf="validateSelectedPresentation(presentation.position)">
+                            <small class="fa-solid fa-minus"></small>
+                        </button>
+                        <button class="icon ms-4 me-4" type="button"  *ngIf="validateSelectedPresentation(presentation.position)">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                        <button class="icon" type="button"  *ngIf="validateSelectedPresentation(presentation.position)">
+                            <small class="fa-solid fa-plus"></small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="textColorPrimary">

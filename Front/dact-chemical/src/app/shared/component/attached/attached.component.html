@@ -1,0 +1,7 @@
+<div class="m-3 row">
+  <label for="file" class="col-2 col-form-label m-2">Archivo</label>
+  <div class="col-9 m-2">
+  <input type="file" class="form-control" id="file" (change)="getAttached($event.target)">
+  <label>{{attached?.name}}</label>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="row m-4">
+    <div *ngFor="let information of informations;let index=index;">
+        <div class="content" *ngIf="index%2 == 0">
+            <div class="row align-items-center">
+                <div class="col-12 text-center">
+                    <hr class="textColorPrimary">
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-5 text-center">
+                    <img [src]="urlBase + information.attached?.url" [alt]="information.name" class="information"/>
+                </div>           
+                <div class="col-1"></div>     
+                <div class="col-5 text-center">
+                    <h1 class="mb-5">{{information.name}}</h1>                                    
+                    <p class="text-justify">
+                        {{information.value}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="content" *ngIf="index%2 != 0">
+            <div class="row align-items-center">
+                <div class="col-12 text-center">
+                    <hr class="textColorPrimary">
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-5 text-center">
+                    <h1 class="mb-5">{{information.name}}</h1>                                    
+                    <p class="text-justify">
+                        {{information.value}}
+                    </p>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-5 text-center">
+                    <img [src]="urlBase + information.attached?.url" [alt]="information.name" class="information"/>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>

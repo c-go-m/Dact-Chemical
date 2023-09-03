@@ -1,0 +1,32 @@
+@use '../utils/colors' as c;
+@use '../utils/border' as b;
+@use '../utils/margin' as m;
+
+.pi-chevron-left:before {    
+    color: c.$color-grey-0;
+    padding: m.$margin-min;
+    margin: m.$margin-general;
+    font-size: x-large;
+    border-radius: b.$border-circle;
+    border: b.$border-general;
+    border-color: c.$color-grey-2;
+    background-color: c.$color-grey-2;
+}
+
+.pi-chevron-right:before {    
+    color: c.$color-grey-0;
+    padding: m.$margin-min;
+    margin: m.$margin-general;
+    font-size: x-large;
+    border-radius: b.$border-circle;
+    border: b.$border-general;
+    border-color: c.$color-grey-2;
+    background-color: c.$color-grey-2;
+}
+.p-galleria-item-nav{
+    height: 3rem;
+}
+
+.pi{
+    line-height: inherit !important;
+}
