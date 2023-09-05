@@ -56,22 +56,16 @@ func (base *BannerHandler) Update(c *fiber.Ctx) error {
 }
 
 func (base *BannerHandler) Delete(c *fiber.Ctx) error {
-	object, err := base.parceObject(c)
-
+	id, _ := strconv.Atoi(c.Params("Id"))
+	err := base.service.Delete(id)
 	if err != nil {
 		return c.Status(fiber.ErrBadRequest.Code).JSON(useError.ControlError(err))
 	}
-
-	err = base.service.Delete(&object)
-
-	if err != nil {
-		return c.Status(fiber.ErrBadRequest.Code).JSON(useError.ControlError(err))
-	}
-
 	return c.Status(fiber.StatusOK).JSON(true)
 }
 
 func (base *BannerHandler) FindById(c *fiber.Ctx) error {
+
 	id, _ := strconv.Atoi(c.Params("Id"))
 	result, err := base.service.FindById(id)
 

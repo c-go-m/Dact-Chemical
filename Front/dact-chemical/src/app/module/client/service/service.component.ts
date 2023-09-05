@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-service',
+  templateUrl: './service.component.html',
+  styleUrls: ['./service.component.scss']
 })
-export class HomeComponent {  
+export class ServiceComponent {  
   rute: string =""
   constructor()
   {}

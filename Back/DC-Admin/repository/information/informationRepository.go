@@ -21,7 +21,7 @@ func New(dB *database.DataBase) *InformationRepository {
 }
 
 func (base *InformationRepository) FindAll() (informations []entity.Information, err error) {
-	err = base.Data.Db.Joins("Attached").Find(&informations).Error
+	err = base.Data.Db.Joins("Attached").Joins("Menu").Find(&informations).Error
 	return
 }
 

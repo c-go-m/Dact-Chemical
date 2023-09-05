@@ -6,6 +6,6 @@ type IBannerService interface {
 	FindAll() ([]entity.Banner, error)
 	Create(*entity.Banner) error
 	Update(*entity.Banner) error
-	Delete(*entity.Banner) error
+	Delete(int) error
 	FindById(int) (entity.Banner, error)
 }

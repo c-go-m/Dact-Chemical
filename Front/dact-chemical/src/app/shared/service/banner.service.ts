@@ -26,4 +26,8 @@ export class BannerService {
     update(banner: Banner): Observable<boolean>{
         return this.http.put<boolean>(this.url+"update",banner)
     }
+
+    delete(id: number): Observable<boolean>{
+        return this.http.delete<boolean>(this.url+"delete/" + id)
+    }
 }

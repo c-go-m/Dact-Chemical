@@ -27,6 +27,12 @@ export class InformationListComponent implements OnInit {
     })
   }
 
+  deleteInformation(information: Information){ 
+    this.informationService.delete(information.Id ? information.Id : 0).subscribe(result =>{
+      this.getAllInformation()
+    })
+  }
+
   openModal(information?: Information){
     const modalRef = this.modalService.open(InformationModalComponent, {size: 'lg'})
     

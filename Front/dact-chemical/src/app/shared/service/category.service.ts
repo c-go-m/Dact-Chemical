@@ -25,5 +25,9 @@ export class CategoryService {
 
     update(category: Category): Observable<boolean>{
         return this.http.put<boolean>(this.url+"update",category)
-    }    
+    }   
+    
+    delete(id: number): Observable<boolean>{
+        return this.http.delete<boolean>(this.url+"delete/" + id)
+    }
 }

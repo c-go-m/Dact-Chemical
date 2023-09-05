@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { ClientRoutingModule } from './client.routing.module';
 import { GalleriaModule } from 'primeng/galleria';
 import { HomeComponent } from './home/home.component';
+import { ServiceComponent } from './service/service.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CategoryComponent, ProductComponent, BannerComponent, InformationComponent } from './common/index';
 
@@ -9,6 +10,7 @@ import { CategoryComponent, ProductComponent, BannerComponent, InformationCompon
   declarations: [
     BannerComponent,
     HomeComponent,
+    ServiceComponent,
     CategoryComponent,
     ProductComponent,
     InformationComponent,

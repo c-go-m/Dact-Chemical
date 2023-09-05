@@ -27,6 +27,12 @@ export class PresentationListComponent implements OnInit {
     })
   }
 
+  deletePresentation(presentation: Presentation){ 
+    this.presentationService.delete(presentation.Id ? presentation.Id : 0).subscribe(result =>{
+      this.getAllPresentation()
+    })
+  }
+
   openModal(presentation?: Presentation){
     const modalRef = this.modalService.open(PresentationModalComponent, {size: 'lg'})
     

@@ -25,5 +25,9 @@ export class InformationService {
 
     update(presentation: Information): Observable<boolean>{
         return this.http.put<boolean>(this.url+"update",presentation)
-    }   
+    }  
+    
+    delete(id: number): Observable<boolean>{
+        return this.http.delete<boolean>(this.url+"delete/" + id)
+    }
 }

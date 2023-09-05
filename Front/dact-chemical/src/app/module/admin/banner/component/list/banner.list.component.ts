@@ -27,6 +27,12 @@ export class BannerListComponent implements OnInit {
     })
   }
 
+  deleteBanner(banner: Banner){ 
+    this.bannerService.delete(banner.Id ? banner.Id : 0).subscribe(result =>{
+      this.getAllBanner()
+    })
+  }
+
   openModal(banner?: Banner){
     const modalRef = this.modalService.open(BannerModalComponent, {size: 'lg'})
     
@@ -34,7 +40,7 @@ export class BannerListComponent implements OnInit {
     
     modalRef.result.then(() => {
       this.getAllBanner()
-    });
+    })
   }
 
 }

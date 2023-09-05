@@ -22,4 +22,12 @@ export class MenuService {
     create(menu: Menu): Observable<boolean>{
         return this.http.post<boolean>(this.url+"create",menu)
     }
+
+    update(menu: Menu): Observable<boolean>{
+        return this.http.put<boolean>(this.url+"update",menu)
+    }
+
+    delete(id: number): Observable<boolean>{
+        return this.http.delete<boolean>(this.url+"delete/" + id)
+    }
 }

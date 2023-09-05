@@ -10,9 +10,9 @@
             <!--Barra de busqueda-->
             <div class="col-6 mt-3">
                 <div class="input-group">
-                    <input class="form-control border rounded-pill" type="text" placeholder="Buscar productos">
+                    <input class="form-control border rounded-pill" type="text" placeholder="Buscar productos" disabled>
                     <span class="input-group-append" style="z-index: 1;">
-                        <button class="icon" type="button" style="margin-left: -50px;">
+                        <button class="icon" type="button" style="margin-left: -50px;" disabled>
                             <i class="fa fa-search"></i>
                         </button>
                     </span>
@@ -23,9 +23,9 @@
             </div>
             <!--Boton de Compra y Carrito de compra-->
             <div class="col-4 mt-3 pe-5 mb-3 d-flex justify-content-end">
-                <button class="btn button border rounded-pill me-5 ps-5 pe-5" *ngIf="!userAdmin" (click)="loginUser()">Ingresar</button>
-                <button class="btn button border rounded-pill me-5 ps-5 pe-5" *ngIf="userAdmin" (click)="logoutUser()">Salir</button>
-                <button class="icon" type="button" >                    
+                <button class="btn button border rounded-pill me-5 ps-5 pe-5" disabled *ngIf="!userAdmin" (click)="loginUser()">Ingresar</button>
+                <button class="btn button border rounded-pill me-5 ps-5 pe-5" disabled *ngIf="userAdmin" (click)="logoutUser()">Salir</button>
+                <button class="icon" type="button" disabled>                    
                     <i class="fa-solid fa-cart-shopping"></i>
                 </button>
             </div>

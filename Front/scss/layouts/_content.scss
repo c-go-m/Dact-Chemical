@@ -13,7 +13,7 @@ main {
 
 footer {
     background-color: c.$color-secundary;
-    height: 8rem;
+    height: auto;
     border: b.$border-general;
 }
 
@@ -40,6 +40,14 @@ header {
 
 .icon {    
     color: c.$color-primary; 
+    background-color: transparent;  
+    border: b.$border-none; 
+    font-weight: t.$font-bold-xx;
+    font-size: 1.6rem;
+}
+
+.icon-social {    
+    color: c.$color-grey-0; 
     background-color: transparent;  
     border: b.$border-none; 
     font-weight: t.$font-bold-xx;

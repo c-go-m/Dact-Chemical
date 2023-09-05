@@ -21,6 +21,13 @@ $font-bold-x: bold;
     letter-spacing: 1px;
 }
 
+.textColorGray-0 {
+    color: c.$color-grey-0;
+    font-weight: $font-bold-xx;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
 .text-justify {
     text-align: justify !important;
 }

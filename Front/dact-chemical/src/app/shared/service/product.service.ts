@@ -26,4 +26,8 @@ export class ProductService {
     update(product: Product): Observable<boolean>{
         return this.http.put<boolean>(this.url+"update",product)
     }   
+
+    delete(id: number): Observable<boolean>{
+        return this.http.delete<boolean>(this.url+"delete/" + id)
+    }
 }

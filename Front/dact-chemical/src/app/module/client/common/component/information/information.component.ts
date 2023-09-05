@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Information } from 'src/app/shared/entities/information.model';
 import { InformationService } from 'src/app/shared/service/information.service';
 import { ConfigService } from '../../../../../shared/config/config.service';
@@ -9,6 +9,7 @@ import { ConfigService } from '../../../../../shared/config/config.service';
   styleUrls: ['./information.component.scss']
 })
 export class InformationComponent {  
+  @Input() rute:string = ''
   informations: Information[] = []
   urlBase:string = ""
   
@@ -25,7 +26,8 @@ export class InformationComponent {
   }
 
   getAllInformation(){
-    this.informationService.getAll().subscribe(result => {      
+    this.informationService.getAll().subscribe(result => {           
+      result = result.filter(info => info.menu?.rute == this.rute)
       this.informations = result.sort(function(a,b){return (a.position?a.position:1) - (b.position?b.position:2)})
     })
   }

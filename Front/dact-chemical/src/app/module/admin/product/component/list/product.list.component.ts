@@ -27,6 +27,12 @@ export class ProductListComponent implements OnInit {
     })
   }
 
+  deleteBanner(product: Product){ 
+    this.productService.delete(product.Id ? product.Id : 0).subscribe(result =>{
+      this.getAllProduct()
+    })
+  }
+
   openModal(product?: Product){
     const modalRef = this.modalService.open(ProductModalComponent, {size: 'lg'})
     

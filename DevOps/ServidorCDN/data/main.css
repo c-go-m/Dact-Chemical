@@ -10,6 +10,13 @@
   letter-spacing: 1px;
 }
 
+.textColorGray-0 {
+  color: #fcfcfc;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
 .text-justify {
   text-align: justify !important;
 }
@@ -51,7 +58,7 @@ main {
 
 footer {
   background-color: #4D4D4D;
-  height: 8rem;
+  height: auto;
   border: 1px solid;
 }
 
@@ -76,6 +83,14 @@ header {
 
 .icon {
   color: #52B708;
+  background-color: transparent;
+  border: none;
+  font-weight: bolder;
+  font-size: 1.6rem;
+}
+
+.icon-social {
+  color: #fcfcfc;
   background-color: transparent;
   border: none;
   font-weight: bolder;
@@ -122,9 +137,14 @@ hr {
   margin: 20px;
 }
 
+.logoComplete {
+  width: 30rem;
+  margin: 20px;
+}
+
 .banner {
   width: 100%;
-  height: auto;
+  height: 30rem;
   margin-top: -10px;
 }
 

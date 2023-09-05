@@ -45,8 +45,15 @@ func (base *BannerService) Update(banner *entity.Banner) error {
 	return base.repository.Update(banner)
 }
 
-func (base *BannerService) Delete(banner *entity.Banner) error {
-	return base.repository.Delete(banner)
+func (base *BannerService) Delete(id int) (err error) {
+	banner, err := base.repository.FindById(id)
+	if err != nil {
+		return err
+	}
+	if err = base.repository.Delete(&banner); err != nil {
+		return err
+	}
+	return base.attachedService.Delete(&banner.Attached)
 }
 
 func (base *BannerService) FindById(id int) (banner entity.Banner, err error) {

@@ -61,11 +61,10 @@ export class BannerModalComponent implements OnInit {
   }
 
   update(){
-    this.mapObject()
-    
-    /*this.bannerService.update(this.banner).subscribe(() => {
+    this.mapObject()    
+    this.bannerService.update(this.banner).subscribe(() => {
       this.activeModal.close()
-    })*/
+    })
   }
 
   close(){

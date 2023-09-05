@@ -27,6 +27,12 @@ export class CategoryListComponent implements OnInit {
     })
   }
 
+  deleteCaregory(category:Category){ 
+    this.categoryService.delete(category.Id ? category.Id : 0).subscribe(result =>{
+      this.getAllCategory()
+    })
+  }
+
   openModal(category?: Category){
     const modalRef = this.modalService.open(CategoryModalComponent, {size: 'lg'})
     
