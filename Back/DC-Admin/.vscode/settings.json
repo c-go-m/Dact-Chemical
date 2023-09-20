@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/982c12f8-26df-474b-86c1-c3562b69720b/resourceGroups/Dact-Checmical/providers/Microsoft.Web/sites/dc-admin",
+    "appService.deploySubpath": "."
+}

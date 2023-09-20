@@ -59,6 +59,7 @@ func (base *Server) StopServer() (err error) {
 }
 
 func (base *Server) AddHandlers() {
+	base.HealthCheck()
 	base.AddListHandlers(banner.New(bannerService))
 	base.AddListHandlers(attached.New(attachedService))
 	base.AddListHandlers(category.New(categoryService))
@@ -66,6 +67,12 @@ func (base *Server) AddHandlers() {
 	base.AddListHandlers(product.New(productService))
 	base.AddListHandlers(presentation.New(presentationService))
 	base.AddListHandlers(information.New(informationService))
+}
+
+func (base *Server) HealthCheck() {
+	base.app.Get("/healthcheck", func(c *fiber.Ctx) error {
+		return c.Status(fiber.StatusOK).JSON("HealthCheck")
+	})
 }
 
 func (base *Server) AddListHandlers(handler handler.IBaseHandler) {

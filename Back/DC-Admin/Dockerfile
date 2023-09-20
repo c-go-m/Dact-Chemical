@@ -1,6 +1,9 @@
 FROM golang:1.18.5-alpine3.16 AS build
 WORKDIR /go/src/myapp
 COPY . .
+
+ENV SSL_CERT_FILE=./certificado.cer
+
 RUN go mod download && go mod verify
 RUN go build -o /go/bin/myapp
 
